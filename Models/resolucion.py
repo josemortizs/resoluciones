@@ -1,5 +1,5 @@
 class Resolucion():
-
+    
     """ **************************************************************** 
     Clase creada para la representación de una resolución de pantalla.
 
