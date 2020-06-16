@@ -1,5 +1,5 @@
-from Models.gestorresoluciones import GestorResoluciones
-from Models.resolucion import Resolucion
+from gestorresoluciones import GestorResoluciones
+from resolucion import Resolucion
 
 
 gestor = GestorResoluciones()
