@@ -43,3 +43,4 @@ class Resolucion():
     def __eq__(self, otraResolucion):
         return ((self.ancho == otraResolucion.ancho) and (self.alto == otraResolucion.alto))
     
+# ---------------------------------------------------------------------------------------------------------------------------
