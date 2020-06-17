@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 # Importamos la clase Resolucion()
-""" Al tener que ser importada, la clase GestorResoluciones() desde init.py, me veo obligado 
-    a modicar la ruta de la importación para hacerla correctamente desde init.py
-"""
 from resolucion import Resolucion
 # Importamos la librería "csv" para trabajar con este tipo de archivos
 import csv
