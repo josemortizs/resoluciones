@@ -22,18 +22,27 @@ class GestorResoluciones():
 
     # Métodos de instancia
     def recuperaResoluciones(self):
-        datosFichero = open(file="Data/DatosGestorResoluciones.csv", mode="r+", encoding="utf-8")
-        contenido = csv.reader(datosFichero)
+        datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="r+", encoding="utf-8")
+        contenido = csv.reader(datosGestorResoluciones)
         for resolucion in contenido:
            self.resoluciones.append(Resolucion(int(resolucion[0]), int(resolucion[1]), resolucion[2], resolucion[3]))
-        datosFichero.close()
+        datosGestorResoluciones.close()
     
 
     def agregaResolucion(self, resolucion):
         if isinstance(resolucion, Resolucion):
             self.resoluciones.append(resolucion)
+            self.guardaResolucion(resolucion)
         else:
             print("No puedes agregar un objeto que no sea de tipo Resolucion()")
+    
+
+    def guardaResolucion(self, resolucion):
+        datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="a", encoding="utf-8")
+        contenido = csv.writer(datosGestorResoluciones)
+        contenido.writerow([resolucion.ancho, resolucion.alto, resolucion.tipo, resolucion.nombre])
+        datosGestorResoluciones.close()
+
     
     def imprimeListadoResoluciones(self):
         for resolucion in self.resoluciones:

@@ -5,7 +5,7 @@ from resolucion import Resolucion
 gestor = GestorResoluciones()
 gestor.imprimeListadoResoluciones()
 
-resolucion = Resolucion(1280,1024,"PC","SXGA")
+resolucion = Resolucion(128,102,"qa1","qa1")
 gestor.agregaResolucion(resolucion)
 
 print("Resoluciones ahora: ")
