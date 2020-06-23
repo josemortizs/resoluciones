@@ -21,6 +21,37 @@
 # Boston, MA 02110-1301 USA,
 
 
-# Importamos la clase Resolucion()
+# Sección de importaciones:
 from resolucion import Resolucion
+from selenium.webdriver import Chrome
 
+
+class GuardarWebEnResolucion():
+
+    """ **************************************************************** 
+    Clase creada para guardar una captura de pantalla, de una url, a una
+    determinada resolución.
+
+    Contiene las variables de instancia url, de tipo str, y resolución,
+    instancia de la clase Resolucion()
+    *************************************************************** """
+
+    # Constructor
+    def __init__(self, url = '', resolucion = Resolucion(320, 568, 'No especificado', 'No especificado')):
+        self.url = url
+        self.resolucion = resolucion
+        self.run()
+    
+    def run(self):
+        # nombreImagen = "{0}{1}" terminar esto mañana
+        driver = Chrome()
+        driver.set_window_size(self.resolucion.ancho, self.resolucion.alto)
+        driver.get(self.url)
+        driver.save_screenshot("screenshot.png")
+        driver.quit()
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+# Temporal, desaparecerá de la versión inicial, solo para probar la clase.
+if __name__ == '__main__':
+    guardarWebEnResolucion = GuardarWebEnResolucion('https://www.ortizsanchezdev.es', Resolucion(1024,768,"qa1","qa1"))
