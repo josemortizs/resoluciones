@@ -57,4 +57,4 @@ class GuardaResoluciones():
 
 # Temporal, desaparecerá de la versión inicial, solo para probar la clase.
 if __name__ == '__main__':
-    resoluciones = GuardaResoluciones('https://www.ortizsanchezdev.es')
+   resoluciones = GuardaResoluciones('https://www.ortizsanchezdev.es')

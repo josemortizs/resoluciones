@@ -25,6 +25,7 @@
 from resolucion import Resolucion
 # Importamos la librería "csv" para trabajar con este tipo de archivos
 import csv
+import os
 
 
 class GestorResoluciones():
@@ -45,7 +46,9 @@ class GestorResoluciones():
 
     # Métodos de instancia
     def recuperaResoluciones(self):
-        datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="r+", encoding="utf-8")
+        fichero = os.path.abspath("../Data/DatosGestorResoluciones.csv")
+        datosGestorResoluciones = open(file=fichero, mode="r+", encoding="utf-8")
+        #datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="r+", encoding="utf-8")
         contenido = csv.reader(datosGestorResoluciones)
         for resolucion in contenido:
            self.resoluciones.append(Resolucion(int(resolucion[0]), int(resolucion[1]), resolucion[2], resolucion[3]))
@@ -61,7 +64,9 @@ class GestorResoluciones():
     
 
     def guardaResolucion(self, resolucion):
-        datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="a", encoding="utf-8")
+        fichero = os.path.abspath("../Data/DatosGestorResoluciones.csv")
+        datosGestorResoluciones = open(file=fichero, mode="a", encoding="utf-8")
+        #datosGestorResoluciones = open(file="Data/DatosGestorResoluciones.csv", mode="a", encoding="utf-8")
         contenido = csv.writer(datosGestorResoluciones)
         contenido.writerow([resolucion.ancho, resolucion.alto, resolucion.tipo, resolucion.nombre])
         datosGestorResoluciones.close()
