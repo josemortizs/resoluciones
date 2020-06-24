@@ -58,8 +58,3 @@ class GuardarWebEnResolucion(threading.Thread):
         driver.quit()
 
 # ---------------------------------------------------------------------------------------------------------------------------
-
-# Temporal, desaparecerá de la versión inicial, solo para probar la clase.
-if __name__ == '__main__':
-    guardarWebEnResolucion = GuardarWebEnResolucion('https://www.ortizsanchezdev.es', Resolucion(1024,768,"qa1","qa1"))
-    guardarWebEnResolucion.start()

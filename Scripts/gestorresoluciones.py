@@ -21,10 +21,11 @@
 # Boston, MA 02110-1301 USA,
 
 
-# Importamos la clase Resolucion()
+# Sección de importaciones:
 from resolucion import Resolucion
 # Importamos la librería "csv" para trabajar con este tipo de archivos
 import csv
+
 
 class GestorResoluciones():
 
