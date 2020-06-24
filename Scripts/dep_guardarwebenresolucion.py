@@ -24,18 +24,13 @@
 # Sección de importaciones:
 from resolucion import Resolucion
 from selenium.webdriver import Chrome
-import threading 
 
 
-
-class GuardarWebEnResolucion(threading.Thread):
-
+class GuardarWebEnResolucion():
+    
     """ **************************************************************** 
     Clase creada para guardar una captura de pantalla, de una url, a una
     determinada resolución.
-
-    Hereda de la clase Thread, del paquete threading, que se usa para el 
-    manejo de "hilos"
 
     Contiene las variables de instancia url, de tipo str, y resolución,
     instancia de la clase Resolucion()
@@ -43,11 +38,9 @@ class GuardarWebEnResolucion(threading.Thread):
 
     # Constructor
     def __init__(self, url = '', resolucion = Resolucion(320, 568, 'No especificado', 'No especificado')):
-        threading.Thread.__init__(self)
         self.url = url
         self.resolucion = resolucion
-        self.eventoHilo = threading.Event()
-
+        self.run()
     
     def run(self):
         nombreImagen = "{0}x{1}_{2}_{3}".format(self.resolucion.ancho, self.resolucion.alto, self.resolucion.tipo, self.resolucion.nombre)
@@ -57,9 +50,9 @@ class GuardarWebEnResolucion(threading.Thread):
         driver.save_screenshot("Screenshot/{0}.png".format(nombreImagen))
         driver.quit()
 
+
 # ---------------------------------------------------------------------------------------------------------------------------
 
 # Temporal, desaparecerá de la versión inicial, solo para probar la clase.
 if __name__ == '__main__':
     guardarWebEnResolucion = GuardarWebEnResolucion('https://www.ortizsanchezdev.es', Resolucion(1024,768,"qa1","qa1"))
-    guardarWebEnResolucion.start()

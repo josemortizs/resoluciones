@@ -1,4 +1,5 @@
 from gestorresoluciones import GestorResoluciones
+from guardarwebenresolucion import GuardarWebEnResolucion
 from resolucion import Resolucion
 
 
@@ -10,3 +11,4 @@ gestor.agregaResolucion(resolucion)
 
 print("Resoluciones ahora: ")
 gestor.imprimeListadoResoluciones()
+
