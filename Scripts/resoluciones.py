@@ -34,6 +34,4 @@ except IndexError as ex:
     )
     sys.exit()
 
-print("url: " ,URL)
-
-guardaresoluciones = GuardaResoluciones('www.google.com')
+resoluciones = GuardaResoluciones(URL)
