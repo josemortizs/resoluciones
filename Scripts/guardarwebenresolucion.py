@@ -43,11 +43,11 @@ class GuardarWebEnResolucion():
         self.run()
     
     def run(self):
-        # nombreImagen = "{0}{1}" terminar esto mañana
+        nombreImagen = "{0}x{1}_{2}_{3}".format(self.resolucion.ancho, self.resolucion.alto, self.resolucion.tipo, self.resolucion.nombre)
         driver = Chrome()
         driver.set_window_size(self.resolucion.ancho, self.resolucion.alto)
         driver.get(self.url)
-        driver.save_screenshot("screenshot.png")
+        driver.save_screenshot("Screenshot/{0}.png".format(nombreImagen))
         driver.quit()
 
 # ---------------------------------------------------------------------------------------------------------------------------
