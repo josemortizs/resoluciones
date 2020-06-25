@@ -23,7 +23,7 @@
 
 # Sección de importaciones:
 from resolucion import Resolucion
-from selenium.webdriver import Chrome
+from selenium import webdriver
 import threading 
 import os
 
@@ -52,11 +52,12 @@ class GuardarWebEnResolucion(threading.Thread):
     
     def run(self):
         nombreImagen = "{0}x{1}_{2}_{3}".format(self.resolucion.ancho, self.resolucion.alto, self.resolucion.tipo, self.resolucion.nombre)
-        rutaImagen = os.path.abspath("../Screenshot/")
-        driver = Chrome()
+        rutaImagen = os.path.abspath('..\Screenshot')
+        rutaCompleta = "{0}\{1}.png".format(rutaImagen, nombreImagen)
+        driver = webdriver.Chrome(executable_path=r'C:/driver/chromedriver.exe')
         driver.set_window_size(self.resolucion.ancho, self.resolucion.alto)
         driver.get(self.url)
-        driver.save_screenshot("/{0}/{1}.png".format(rutaImagen, nombreImagen))
+        driver.save_screenshot(rutaCompleta)
         driver.quit()
 
 # ---------------------------------------------------------------------------------------------------------------------------
