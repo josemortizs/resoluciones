@@ -72,3 +72,8 @@ class GestorResoluciones():
             print(resolucion)
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+# Temporal, desaparecerá de la versión inicial, solo para probar la clase.
+if __name__ == '__main__':
+    gestorResoluciones = GestorResoluciones()
+    gestorResoluciones.imprimeListadoResoluciones()
