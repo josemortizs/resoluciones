@@ -54,7 +54,7 @@ class GuardarWebEnResolucion(threading.Thread):
         nombreImagen = "{0}x{1}_{2}_{3}".format(self.resolucion.ancho, self.resolucion.alto, self.resolucion.tipo, self.resolucion.nombre)
         rutaImagen = os.path.abspath('..\Screenshot')
         rutaCompleta = "{0}\{1}.png".format(rutaImagen, nombreImagen)
-        driver = webdriver.Chrome(executable_path=r'C:/driver/chromedriver.exe')
+        driver = webdriver.Chrome(executable_path=r'C:/chromedriver/windows/chrome83/chromedriver.exe')
         driver.set_window_size(self.resolucion.ancho, self.resolucion.alto)
         driver.get(self.url)
         driver.save_screenshot(rutaCompleta)
