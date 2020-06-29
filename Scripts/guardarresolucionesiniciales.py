@@ -27,10 +27,14 @@ def guardaResolucionesIniciales():
 
     gestorresoluciones = GestorResoluciones()
 
-    gestorresoluciones.agregaResolucion(Resolucion(1920,1080,'PC','Full HD'))
-    gestorresoluciones.agregaResolucion(Resolucion(1366,768,'PC','HD'))
+    gestorresoluciones.agregaResolucion(Resolucion(640,480,'PC','SD'))
+    GestorResoluciones.agregaResolucion(Resolucion(960,540,'PC','QHD'))
     gestorresoluciones.agregaResolucion(Resolucion(1024,768,'PC','XVGA'))
     gestorresoluciones.agregaResolucion(Resolucion(1280,1024,'PC','SXGA'))
+    gestorresoluciones.agregaResolucion(Resolucion(1366,768,'PC','HD'))
+    gestorresoluciones.agregaResolucion(Resolucion(1920,1080,'PC','Full HD'))
+    gestorresoluciones.agregaResolucion(Resolucion(2560,1440,'PC','QHD'))
+    gestorresoluciones.agregaResolucion(Resolucion(3840,2160,'PC','UHD'))
 
     gestorresoluciones.imprimeListadoResoluciones()
 
